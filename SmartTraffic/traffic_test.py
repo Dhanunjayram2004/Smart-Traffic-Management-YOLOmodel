@@ -2,7 +2,8 @@ import cv2
 from ultralytics import YOLO
 import math
 model=YOLO('yolov8n.pt')
-cap=cv2.VideoCapture(r"SmartTraffic/highway-auto-traffic-road-drive-vehicles-speed-driving-a-car-movement.jpg")
+video_path = "input_video.mp4"
+cap=cv2.VideoCapture(video_path)
 while True:
     vehicles_count=0;
     success,img=cap.read()
@@ -35,4 +36,5 @@ while True:
         break
 cap.release()
 cv2.destroyAllWindows()
+
 
